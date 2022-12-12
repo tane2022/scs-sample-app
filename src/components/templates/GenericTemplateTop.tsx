@@ -18,15 +18,10 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from "@material-ui/icons/Home";
-import HomeWork from "@material-ui/icons/HomeWork";
-import Search from "@material-ui/icons/Search";
-import SpeakerNotesOutlined from "@material-ui/icons/SpeakerNotesOutlined";
-import TransferWithinAStation from "@material-ui/icons/TransferWithinAStation";
-import Description from "@material-ui/icons/Description";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import Home from "@material-ui/icons/Home";
 
 const drawerWidth = 240;
 
@@ -110,7 +105,7 @@ const useStyles = makeStyles((theme: Theme) =>
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
       }),
-      width: theme.spacing(7),
+      width: theme.spacing(1),
       [theme.breakpoints.up("sm")]: {
         width: theme.spacing(9),
       },
@@ -156,7 +151,7 @@ export interface GenericTemplateProps {
   title: string;
 }
 
-const GenericTemplate: React.FC<GenericTemplateProps> = ({
+const GenericTemplateTop: React.FC<GenericTemplateProps> = ({
   children,
   title,
 }) => {
@@ -201,6 +196,7 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
             </Typography>
           </Toolbar>
         </AppBar>
+
         <Drawer
           variant="permanent"
           classes={{
@@ -221,75 +217,6 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
                   <HomeIcon />
                 </ListItemIcon>
                 <ListItemText primary="現場一覧" />
-              </ListItem>
-            </Link>
-            <Link to="/constInfo" className={classes.link}>
-              <ListItem button>
-                <ListItemIcon>
-                  <HomeWork />
-                </ListItemIcon>
-                <ListItemText primary="現場情報" />
-              </ListItem>
-            </Link>
-            <Link to="/RemoteCheckInsert" className={classes.link}>
-              <ListItem button>
-                <ListItemIcon>
-                  <Search />
-                </ListItemIcon>
-                <ListItemText primary="巡視登録" />
-              </ListItem>
-            </Link>
-            <Link to="/products" className={classes.link}>
-              <ListItem button>
-                <ListItemIcon>
-                  <SpeakerNotesOutlined />
-                </ListItemIcon>
-                <ListItemText primary="伝達登録" />
-              </ListItem>
-            </Link>
-            <Link to="/entStaff" className={classes.link}>
-              <ListItem button>
-                <ListItemIcon>
-                  <TransferWithinAStation />
-                </ListItemIcon>
-                <ListItemText primary="入場者一覧" />
-              </ListItem>
-            </Link>
-            <Link to="/products" className={classes.link}>
-              <ListItem button>
-                <ListItemIcon>
-                  <Description />
-                </ListItemIcon>
-                <ListItemText primary="作業開始報告" />
-              </ListItem>
-            </Link>
-            <Link to="/entStaff" className={classes.link}>
-              <ListItem button>
-                <ListItemIcon>
-                  <TransferWithinAStation />
-                </ListItemIcon>
-                <ListItemText primary="退場者一覧" />
-              </ListItem>
-            </Link>
-            <Link to="/products" className={classes.link}>
-              <ListItem button>
-                <ListItemIcon>
-                  <Description />
-                </ListItemIcon>
-                <ListItemText primary="作業終了報告" />
-              </ListItem>
-            </Link>
-            <Link to="/products" className={classes.link}>
-              <ListItem button>
-                <ListItemText primary="" />
-              </ListItem>
-            </Link>
-            <Link to="/RemoteCheckStart" className={classes.link}>
-              <ListItem button>
-                <ListItemIcon>
-                  <Home />
-                </ListItemIcon>
-                <ListItemText primary="遠隔巡視開始" />
               </ListItem>
             </Link>
           </List>
@@ -317,4 +244,4 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
   );
 };
 
-export default GenericTemplate;
+export default GenericTemplateTop;
