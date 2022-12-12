@@ -7,45 +7,23 @@ import GenericTemplate from '../templates/GenericTemplate';
 
 import { Typography, TextField, Button, CssBaseline, Container } from '@material-ui/core';
 
+import SampleImage from "../images/cont_in.png"
+
 
 type Props = {} & RouteComponentProps<{}>;
 
-const RemoteCheckStart: React.FC<Props> = (props) => {
+const RemoteCheckVideo: React.FC<Props> = (props) => {
 
   const move = () => {
     props.history.push({
-      pathname: '/remoteCheckVideo',
+      pathname: '/constInfo',
       state: { sourcePage: 'HomePage' }
     });
   };
 
   return (
-    <GenericTemplate title={'遠隔巡視予定'}>
+    <GenericTemplate title={'遠隔巡視'}>
       <MaterialTable
-        columns={[
-          { title: '巡視方法', field: 'check', headerStyle: { maxWidth: 0}},
-          { title: '巡視予定日', field: 'itemName', headerStyle: { maxWidth: 0}},
-          { title: '巡視時刻', field: 'category', headerStyle: { maxWidth: 0}},
-        ]}
-        data={[
-          { check: '遠隔', itemName: '2022/12/12', category: '13:00' },
-        ]}
-
-        options={{
-          showTitle: false,
-          headerStyle: { whiteSpace: 'nowrap' ,position: 'sticky', top: 0,
-          backgroundColor: "#1565C0", color: "#FFF" },
-          paging: false,
-          maxBodyHeight: 300,
-          search: false,
-          searchFieldVariant: "standard",
-          toolbar: false
-/*          searchFieldAlignment: 'left',
-*/
-        }}
-      />
-
-<MaterialTable
         columns={[
           { title: '現場側対応者', field: 'itemName', headerStyle: { maxWidth: 0}},
           { title: '所属会社', field: 'category', headerStyle: { minWidth: 150}},
@@ -67,7 +45,9 @@ const RemoteCheckStart: React.FC<Props> = (props) => {
 */
         }}
       />
-
+    <br></br>
+    <img src={SampleImage} alt="sample" />    
+    <br></br>
         <p></p>
         <Button
           variant="contained"
@@ -75,11 +55,11 @@ const RemoteCheckStart: React.FC<Props> = (props) => {
           fullWidth
           onClick={move}
         >
-          遠隔巡視開始
+          巡視終了
         </Button>
 
     </GenericTemplate>
   );
 };
 
-export default withRouter(RemoteCheckStart);
+export default withRouter(RemoteCheckVideo);

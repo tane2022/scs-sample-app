@@ -27,6 +27,8 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Home from "@material-ui/icons/Home";
+import CameraFront from '@material-ui/icons/CameraFront';
+
 
 const drawerWidth = 240;
 
@@ -161,7 +163,7 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
   title,
 }) => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -239,7 +241,15 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
                 <ListItemText primary="巡視登録" />
               </ListItem>
             </Link>
-            <Link to="/products" className={classes.link}>
+            <Link to="/RemoteCheckStart" className={classes.link}>
+              <ListItem button>
+                <ListItemIcon>
+                  <CameraFront />
+                </ListItemIcon>
+                <ListItemText primary="遠隔巡視開始" />
+              </ListItem>
+            </Link>
+            <Link to="/infoDeliver" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <SpeakerNotesOutlined />
@@ -255,7 +265,7 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
                 <ListItemText primary="入場者一覧" />
               </ListItem>
             </Link>
-            <Link to="/products" className={classes.link}>
+            <Link to="/startReport" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <Description />
@@ -263,7 +273,7 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
                 <ListItemText primary="作業開始報告" />
               </ListItem>
             </Link>
-            <Link to="/entStaff" className={classes.link}>
+            <Link to="/exitStaff" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <TransferWithinAStation />
@@ -271,7 +281,7 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
                 <ListItemText primary="退場者一覧" />
               </ListItem>
             </Link>
-            <Link to="/products" className={classes.link}>
+            <Link to="/endReport" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <Description />
@@ -282,14 +292,6 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
             <Link to="/products" className={classes.link}>
               <ListItem button>
                 <ListItemText primary="" />
-              </ListItem>
-            </Link>
-            <Link to="/RemoteCheckStart" className={classes.link}>
-              <ListItem button>
-                <ListItemIcon>
-                  <Home />
-                </ListItemIcon>
-                <ListItemText primary="遠隔巡視開始" />
               </ListItem>
             </Link>
           </List>

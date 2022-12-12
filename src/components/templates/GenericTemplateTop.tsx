@@ -156,7 +156,7 @@ const GenericTemplateTop: React.FC<GenericTemplateProps> = ({
   title,
 }) => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -198,11 +198,12 @@ const GenericTemplateTop: React.FC<GenericTemplateProps> = ({
         </AppBar>
 
         <Drawer
-          variant="permanent"
+          variant="temporary"
           classes={{
             paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
           }}
           open={open}
+          onClose={ handleDrawerClose }
         >
           <div className={classes.toolbarIcon}>
             <IconButton onClick={handleDrawerClose}>
