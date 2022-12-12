@@ -94,6 +94,7 @@ const RemoteCheckInsert: React.FC<Props> = (props) => {
           color="secondary"
           fullWidth
           onClick={move}
+          
 >
           登録
         </Button>
